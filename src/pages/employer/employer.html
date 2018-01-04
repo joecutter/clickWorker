@@ -1,0 +1,112 @@
+
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title text-center>Employer</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div padding id="cloud-layer">
+    <div padding>
+      <ion-segment [(ngModel)]="boss" (ionChange)="showdata()">
+        <ion-segment-button value="news">
+          News Feed
+        </ion-segment-button>
+        <ion-segment-button value="profile">
+          Profile
+        </ion-segment-button>
+      </ion-segment>
+
+      <div [ngSwitch]="boss">
+         <ion-list *ngSwitchCase="'news'">
+           <ion-item>
+             {{next}}
+           </ion-item>
+         </ion-list>
+
+       </div>
+
+   </div>
+
+    <ion-list inset>
+
+    <ion-row>
+      <ion-col>
+
+          <ion-item>
+            <ion-label>Username</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input type="email"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Company Name</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-label>Location</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Description</ion-label>
+            <ion-textarea  type="text"></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Job Type</ion-label>
+              <ion-select [(ngModel)]="type">
+                <div>
+                  <ion-option  *ngFor="let item of job" [value] = "item">{{item}}</ion-option>
+                </div>
+              </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Occupation</ion-label>
+              <ion-select [(ngModel)]="occupation">
+                <div>
+                  <ion-option  *ngFor="let item of jobList" [value] = "item">{{item}}</ion-option>
+                </div>
+              </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Status</ion-label>
+              <ion-select [(ngModel)]="duration">
+                <div>
+                  <ion-option  *ngFor="let item of Duration" [value] = "item">{{item}}</ion-option>
+                </div>
+              </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <div text-center>
+              <img src="assets/people.png" alt="avatar">
+              <h2>{{id}}</h2>
+            </div>
+              <button ion-button class="login-button" (click)="photo()">upload</button>
+          </ion-item>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button class="login-button" (click)="register()">Sign Up</button>
+      </ion-col>
+    </ion-row>
+
+
+    </ion-list>
+  </div>
+
+</ion-content>

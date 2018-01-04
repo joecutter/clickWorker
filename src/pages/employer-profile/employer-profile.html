@@ -1,0 +1,109 @@
+<!--
+  Generated template for the EmployerProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="dark">
+        <ion-title text-center>Profile</ion-title>
+      </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div>
+    <ion-list inset>
+            <ion-card>
+                
+                  <ion-card-header text-center>
+                    Employer Info
+                  </ion-card-header>
+                
+                  <ion-card-content>
+                    <!-- Add card content here! -->
+                    <ion-row>
+                        <ion-col>
+                          <ion-item>
+                              <ion-label>Email</ion-label>
+                              <ion-input type="email" [(ngModel)]="email"></ion-input>
+                            </ion-item>
+                  
+                            <ion-item>
+                              <ion-label>Password</ion-label>
+                              <ion-input type="password" [(ngModel)]="pwd"></ion-input>
+                            </ion-item>
+              
+                            <ion-item>
+                                <ion-label>First Name</ion-label>
+                                <ion-input type="text" [(ngModel)]="fname"></ion-input>
+                            </ion-item>
+              
+                            <ion-item>
+                                  <ion-label>Last Name</ion-label>
+                                  <ion-input type="text" [(ngModel)]="lname"></ion-input>
+                            </ion-item>
+                  
+                        </ion-col>
+                      </ion-row>
+                  </ion-card-content>
+                
+                </ion-card>
+
+                <div>
+                    <ion-card>
+                        
+                          <ion-card-header text-center>
+                            Company Info
+                          </ion-card-header>
+                        
+                          <ion-card-content>
+                            <!-- Add card content here! -->
+                            <ion-row>
+                                <ion-col>
+                                  <ion-item>
+                                      <ion-label>Company name</ion-label>
+                                      <ion-input type="text" [(ngModel)]="company"></ion-input>
+                                    </ion-item>
+                          
+                                    <ion-item>
+                                      <ion-label>Country</ion-label>
+                                      <ion-input type="text" [(ngModel)]="country"></ion-input>
+                                    </ion-item>
+                      
+                                  <div>
+                                    <ion-item>
+                                        <ion-label>Location</ion-label>
+                                        <ion-input type="text" [(ngModel)]="location"></ion-input>
+                                    </ion-item>
+                                    <ion-item>
+                                        <ion-label>street</ion-label>
+                                        <ion-input type="text" [(ngModel)]="street"></ion-input>
+                                    </ion-item>
+                                  </div>
+                      
+                                    <ion-item>
+                                        <ion-label>Phone no</ion-label>
+                                        <ion-input type="text" [(ngModel)]="cell_no"></ion-input>
+                                    </ion-item>
+                          
+                                </ion-col>
+                              </ion-row>
+                          </ion-card-content>
+                        
+                        </ion-card>
+                </div>
+
+                          
+                <ion-row>
+                    <ion-col>
+                      <button ion-button class="login-button" (click)="register(event)">Update</button>
+                    </ion-col>
+                  </ion-row>
+        
+      </ion-list>
+    </div>
+
+</ion-content>

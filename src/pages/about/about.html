@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title text-center>
+      Applied Jobs
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <div class="posts">
+          <ion-list *ngFor="let item of final">
+            <ion-card>
+                
+                  <ion-item>
+                    <ion-avatar item-start>
+                      <img src="assets/male.png">
+                    </ion-avatar>
+                    <h2>joe{{item.id}}</h2>
+                    <p><b>{{item.title}}</b></p>
+                    <p>posted on {{item.date}}</p>
+                  </ion-item>
+                
+                  <ion-card-content>
+                    <!-- Add card content here! -->
+                    {{item.post}}
+                      
+                  </ion-card-content>
+                  <ion-row>
+                      <ion-col center text-center>
+                        <ion-note>
+                          applied on {{item.created}}
+                        </ion-note>
+                      </ion-col>
+                    </ion-row>
+            </ion-card>
+          </ion-list>
+        </div>
+  </ion-list>
+

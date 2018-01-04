@@ -1,0 +1,95 @@
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title text-center>Register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div>
+        <ion-list inset>
+         <ion-card>
+        
+            <ion-card-header text-center>
+              Job Seeker Sign Up
+            </ion-card-header>
+          
+            <ion-card-content>
+              <!-- Add card content here! -->
+              <ion-row>
+                  <ion-col>
+            
+                      <ion-item>
+                        <ion-label>Email</ion-label>
+                        <ion-input type="email" [(ngModel)]="email"></ion-input>
+                      </ion-item>
+            
+                      <ion-item>
+                          <ion-label>Password</ion-label>
+                          <ion-input type="password" [(ngModel)]="pwd"></ion-input>
+                        </ion-item>
+            
+                      <!-- <ion-item>
+                        <ion-label>Purpose</ion-label>
+                          <ion-select [(ngModel)]="status">
+                            <div>
+                              <ion-option  *ngFor="let item of list" [value] = "item">{{item}}</ion-option>
+                            </div>
+                          </ion-select>
+                      </ion-item> -->
+            
+                      <ion-item>
+                          <ion-label>First Name</ion-label>
+                          <ion-input type="text" [(ngModel)]="fname"></ion-input>
+                        </ion-item>
+            
+                      <ion-item>
+                          <ion-label>Last Name</ion-label>
+                          <ion-input type="text" [(ngModel)]="lname"></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                          <ion-label>Username</ion-label>
+                          <ion-input type="text" [(ngModel)]="username"></ion-input>
+                        </ion-item>
+            
+                      <ion-item>
+                            <ion-label>Location</ion-label>
+                            <ion-input type="text" [(ngModel)]="location"></ion-input>
+                          </ion-item>
+            
+                      <ion-item>
+                            <ion-label>Phone Number</ion-label>
+                            <ion-input type="text" [(ngModel)]="cell_no"></ion-input>
+                          </ion-item>
+            
+                        <ion-item>
+                            <ion-label>Date of Birth</ion-label>
+                            <ion-input type="date" [(ngModel)]="date"></ion-input>
+                          </ion-item>
+            
+                          <ion-item>
+                              <ion-label>Sex</ion-label>
+                                <ion-select [(ngModel)]="gender">
+                                  <div>
+                                    <ion-option  *ngFor="let item of sex" [value] = "item">{{item}}</ion-option>
+                                  </div>
+                                </ion-select>
+                            </ion-item>
+            
+                  </ion-col>
+                </ion-row>
+            
+                <ion-row>
+                  <ion-col>
+                    <button ion-button class="login-button" (click)="register(event)">Next</button>
+                  </ion-col>
+                </ion-row>
+            </ion-card-content>
+        
+        </ion-card>
+      </ion-list>
+    </div>
+</ion-content>

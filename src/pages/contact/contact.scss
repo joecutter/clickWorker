@@ -1,0 +1,21 @@
+
+
+.ios, .md {
+
+  page-contact {
+    .scroll-content {
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+      }
+
+      .msg {
+      }
+
+      .listmsg {
+        margin-top: 2%;
+      }
+
+  }
+
+}

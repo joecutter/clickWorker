@@ -1,0 +1,18 @@
+
+page-about  {
+    
+        .scroll-content {
+            background-color: #42c7ff;  
+            display: flex;
+            flex-direction: column;
+            overflow: scroll;
+          }
+          .posts{
+              margin-top: 10px;
+              ion-card{
+                border-radius: 30px !important;
+                padding-left: 10px !important;
+              }
+          }
+    }
+      

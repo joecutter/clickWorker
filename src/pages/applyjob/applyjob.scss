@@ -1,0 +1,24 @@
+
+.ios, .md {
+    
+      page-applyjob  {
+        .scroll-content {
+            background-color: #42c7ff;  
+            display: flex;
+            flex-direction: column;
+            overflow: scroll;
+          }
+          .posts{
+              margin-top: 20px;
+              ion-card{
+                border-radius: 30px !important;
+                padding-left: 10px !important;
+              }
+              .large{
+                height: 150px;
+              }
+          }
+    
+    }
+}
+    

@@ -1,0 +1,26 @@
+page-post {
+
+
+      ion-textarea{
+          border-style: solid !important;
+      }
+
+      ion-input{
+        border-style: solid !important;
+      }
+
+      .scroll-content {
+        background-color: #AED6F1;  
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+      }
+      .posts{
+          margin-top: 30px;
+          ion-card{
+            border-radius: 30px !important;
+            padding-left: 10px !important;
+          }
+      }
+
+}

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title text-center>
+      Message
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="listmsg">
+
+    <ion-item class="msg" onclick="openMsg(item)">
+      <ion-avatar item-start>
+        <img src="assets/male.png" class="img">
+      </ion-avatar>
+      <h2>{{msglist.name}}</h2>
+      <p>{{msglist.msg}}</p>
+    </ion-item>
+
+  </ion-list>
+</ion-content>
