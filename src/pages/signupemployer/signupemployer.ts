@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 
 import { CompanyPage } from '../../pages/company/company';
 
@@ -7,13 +7,6 @@ import { CompanyPage } from '../../pages/company/company';
 import { EmployerProfile } from '../../Model/employer_profile';
 //provider
 import { ClickService } from '../../provider/service';
-
-/**
- * Generated class for the SignupemployerPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-signupemployer',
@@ -28,6 +21,7 @@ export class SignupemployerPage {
   lname:any;
 
   constructor(public navCtrl: NavController, 
+              public loadingCtrl: LoadingController,
               public click:ClickService,
               public navParams: NavParams) {
   }
@@ -37,6 +31,15 @@ export class SignupemployerPage {
   }
 
   register(event){
+
+    let loader = this.loadingCtrl.create({
+      content: "Please wait...",
+      duration: 3000,
+      dismissOnPageChange: true
+    });
+
+    loader.present();
+
     var info = {
       email:this.email,
       pwd:this.pwd,
@@ -51,15 +54,21 @@ export class SignupemployerPage {
       var data = user;
       console.log(data);
 
+      if(data.msg[0]._id !== ""){
+        var employerid = data.msg[0]._id;;
+        localStorage.setItem("employerID",employerid);
+   }
+
       if(data.code == "200"){
-        this.navCtrl.push(CompanyPage);
+          loader.dismiss(); 
+          this.navCtrl.push(CompanyPage);
+
+          this.email = " ";
+          this.pwd = " ";
+          this.fname = " ";
+          this.lname = " ";
       }
-      this.email = " ";
-      this.pwd = " ";
-      this.fname = " ";
-      this.lname = " ";
-    
-    });
+ });
     
   }
 

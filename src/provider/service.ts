@@ -12,11 +12,13 @@ export class ClickService {
 private Url = "";
 public id:any;
 public userID:any;
+public employerID:any;  
 
 data:any;
   constructor (private http: Http) {
     this.id = localStorage.getItem("id");
     this.userID = localStorage.getItem("userID");
+    this.employerID = localStorage.getItem("employerID");
   }
 
   // signUp
@@ -109,7 +111,7 @@ getApplyJob(){
 setEmployerDetails(info){
   var headers = new Headers();
   headers.append('Content-Type','application/json');
-  return this.http.post("http://localhost:3100/employer/employerProfile",JSON.stringify(info), {headers:headers})
+  return this.http.post("http://localhost:3100/register/employerProfile",JSON.stringify(info), {headers:headers})
     .map(res => res.json());
 
 }
@@ -127,7 +129,7 @@ getEmployerDetails(email){
 setCompanyDetails(info){
   var headers = new Headers();
   headers.append('Content-Type','application/json');
-  return this.http.post("http://localhost:3100/employer/employerCompany",JSON.stringify(info), {headers:headers})
+  return this.http.post("http://localhost:3100/register/employer/company/"+this.employerID,JSON.stringify(info), {headers:headers})
     .map(res => res.json());
 
 }

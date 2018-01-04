@@ -29,6 +29,8 @@ export class CompanyPage {
   street:any;
   cell_no:any;
 
+  public id:any;
+
   constructor(public navCtrl: NavController,
               public click:ClickService,
               public navParams: NavParams) {
@@ -36,6 +38,8 @@ export class CompanyPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CompanyPage');
+    this.id = localStorage.getItem('employerID');
+    console.log("stored employerID: " +this.id);
   }
 
   register(event){

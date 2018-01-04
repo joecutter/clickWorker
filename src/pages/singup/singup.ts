@@ -52,7 +52,8 @@ export class SingupPage {
 
       let loader = this.loadingCtrl.create({
         content: "Please wait...",
-        dismissOnPageChange:true
+        duration: 3000,
+        dismissOnPageChange: true
       });
 
       loader.present();
@@ -71,14 +72,18 @@ export class SingupPage {
       }
 
       this.click.postUser(newUser).subscribe(user =>{
-        console.log(user.id._id);
+        this.reg.push(newUser);
+        var data = user;
         
-        if(user.msg[0]._id !==""){
-            
-        var id = user.id._id;
-        localStorage.setItem("userID",id);
+        if(data.msg[0]._id !==""){
+          var id = data.msg[0]._id;
+          localStorage.setItem("userID",id);
+        }
 
-      this.reg.push(newUser);
+        if(data.code == "200"){
+          loader.dismiss(); 
+          this.navCtrl.push(WorkerInfoPage);
+
         this.email = " ";
         this.pwd = " ";
         this.status = " ";
@@ -87,13 +92,10 @@ export class SingupPage {
         this.location = " ";
         this.cell_no = " ";
         this.date = " ";
-        this.gender = " ";
-
-        loader.dismiss();     
+        this.gender = " ";    
         }
+
      });
-    console.log("holder " +this.reg);
-    this.navCtrl.push(WorkerInfoPage);
   }
 
   }
